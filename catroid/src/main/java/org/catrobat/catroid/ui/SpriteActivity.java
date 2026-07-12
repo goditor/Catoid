@@ -676,19 +676,9 @@ public class SpriteActivity extends BaseActivity {
 					.startActivityForResult(SPRITE_POCKET_PAINT);
 			alertDialog.dismiss();
 		});
-		root.findViewById(R.id.dialog_new_look_media_library).setOnClickListener(view -> {
-			new ImportFormMediaLibraryLauncher(this, CATROBAT_CONTENT_LOOKS_URL)
-					.startActivityForResult(SPRITE_LIBRARY);
-			alertDialog.dismiss();
-		});
 		root.findViewById(R.id.dialog_new_look_gallery).setOnClickListener(view -> {
 			new ImportFromFileLauncher(this, "image/*", getString(R.string.select_look_from_gallery))
 					.startActivityForResult(SPRITE_FILE);
-			alertDialog.dismiss();
-		});
-		root.findViewById(R.id.dialog_new_look_camera).setOnClickListener(view -> {
-			new ImportFromCameraLauncher(this)
-					.startActivityForResult(SPRITE_CAMERA);
 			alertDialog.dismiss();
 		});
 
@@ -708,19 +698,9 @@ public class SpriteActivity extends BaseActivity {
 					.startActivityForResult(BACKGROUND_POCKET_PAINT);
 			alertDialog.dismiss();
 		});
-		root.findViewById(R.id.dialog_new_look_media_library).setOnClickListener(view -> {
-			new ImportFormMediaLibraryLauncher(this, CATROBAT_CONTENT_BACKGROUNDS_URL)
-					.startActivityForResult(BACKGROUND_LIBRARY);
-			alertDialog.dismiss();
-		});
 		root.findViewById(R.id.dialog_new_look_gallery).setOnClickListener(view -> {
 			new ImportFromFileLauncher(this, "image/*", getString(R.string.select_look_from_gallery))
 					.startActivityForResult(BACKGROUND_FILE);
-			alertDialog.dismiss();
-		});
-		root.findViewById(R.id.dialog_new_look_camera).setOnClickListener(view -> {
-			new ImportFromCameraLauncher(this)
-					.startActivityForResult(BACKGROUND_CAMERA);
 			alertDialog.dismiss();
 		});
 
@@ -735,32 +715,14 @@ public class SpriteActivity extends BaseActivity {
 				.setView(root)
 				.create();
 
-		String mediaLibraryUrl;
-
-		if (currentSprite.equals(currentScene.getBackgroundSprite())) {
-			mediaLibraryUrl = CATROBAT_CONTENT_BACKGROUNDS_URL;
-		} else {
-			mediaLibraryUrl = CATROBAT_CONTENT_LOOKS_URL;
-		}
-
 		root.findViewById(R.id.dialog_new_look_paintroid).setOnClickListener(view -> {
 			new ImportFromPocketPaintLauncher(this)
 					.startActivityForResult(LOOK_POCKET_PAINT);
 			alertDialog.dismiss();
 		});
-		root.findViewById(R.id.dialog_new_look_media_library).setOnClickListener(view -> {
-			new ImportFormMediaLibraryLauncher(this, mediaLibraryUrl)
-					.startActivityForResult(LOOK_LIBRARY);
-			alertDialog.dismiss();
-		});
 		root.findViewById(R.id.dialog_new_look_gallery).setOnClickListener(view -> {
 			new ImportFromFileLauncher(this, "image/*", getString(R.string.select_look_from_gallery))
 					.startActivityForResult(LOOK_FILE);
-			alertDialog.dismiss();
-		});
-		root.findViewById(R.id.dialog_new_look_camera).setOnClickListener(view -> {
-			new ImportFromCameraLauncher(this)
-					.startActivityForResult(LOOK_CAMERA);
 			alertDialog.dismiss();
 		});
 

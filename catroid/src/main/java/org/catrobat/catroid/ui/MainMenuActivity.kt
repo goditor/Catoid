@@ -248,63 +248,11 @@ class MainMenuActivity : BaseCastActivity(), ProjectLoadListener {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main_menu, menu)
-        val scratchConverter = getString(R.string.main_menu_scratch_converter)
-        val scratchConverterBeta = SpannableString(
-            scratchConverter + " " + getString(R.string.beta)
-        )
-
-        scratchConverterBeta.setSpan(
-            ForegroundColorSpan(resources.getColor(R.color.beta_label_color, theme)),
-            scratchConverter.length, scratchConverterBeta.length,
-            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-        )
-        menu.findItem(R.id.menu_scratch_converter).title = scratchConverterBeta
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.menu_rate_app -> if (Utils.checkIsNetworkAvailableAndShowErrorMessage(this)) {
-                try {
-                    startActivity(
-                        Intent(
-                            Intent.ACTION_VIEW,
-                            Uri.parse("market://details?id=$packageName")
-                        )
-                    )
-                } catch (e: ActivityNotFoundException) {
-                    Log.e(TAG, "onOptionsItemSelected: ", e)
-                    ToastUtil.showError(this, R.string.main_menu_play_store_not_installed)
-                }
-            }
-            R.id.menu_terms_of_use -> TermsOfUseDialogFragment().show(
-                supportFragmentManager,
-                TermsOfUseDialogFragment.TAG
-            )
-            R.id.menu_privacy_policy -> {
-                val browserIntent = Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse(FlavoredConstants.PRIVACY_POLICY_URL)
-                )
-                startActivity(browserIntent)
-            }
-            R.id.menu_about -> AboutDialogFragment().show(
-                supportFragmentManager,
-                AboutDialogFragment.TAG
-            )
-            R.id.menu_scratch_converter -> if (Utils.checkIsNetworkAvailableAndShowErrorMessage(this)) {
-                startActivity(Intent(this, ScratchConverterActivity::class.java))
-            }
-            R.id.settings -> startActivity(Intent(this, SettingsActivity::class.java))
-            R.id.menu_help -> startActivity(
-                Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse(CATROBAT_HELP_URL)
-                )
-            )
-            else -> return super.onOptionsItemSelected(item)
-        }
-        return true
+        return super.onOptionsItemSelected(item)
     }
 
     private fun prepareStandaloneProject() {

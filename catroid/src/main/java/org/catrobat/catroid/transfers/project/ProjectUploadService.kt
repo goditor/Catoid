@@ -56,7 +56,7 @@ import org.catrobat.catroid.common.Constants.NO_GOOGLE_EMAIL
 import org.catrobat.catroid.common.Constants.UPLOAD_RESULT_RECEIVER_RESULT_CODE
 import org.catrobat.catroid.io.ProjectAndSceneScreenshotLoader
 import org.catrobat.catroid.io.ZipArchiver
-import org.catrobat.catroid.ui.MainMenuActivity
+import org.catrobat.catroid.ui.ProjectListActivity
 import org.catrobat.catroid.utils.DeviceSettingsProvider
 import org.catrobat.catroid.utils.ToastUtil
 import org.catrobat.catroid.utils.Utils
@@ -147,7 +147,7 @@ class ProjectUploadService : IntentService("ProjectUploadService") {
     private fun createUploadNotification(programName: String): Notification {
         StatusBarNotificationManager(applicationContext).createNotificationChannel(applicationContext)
 
-        var uploadIntent = Intent(applicationContext, MainMenuActivity::class.java)
+        var uploadIntent = Intent(applicationContext, ProjectListActivity::class.java)
         uploadIntent.action = Intent.ACTION_MAIN
         uploadIntent = uploadIntent.setFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
 
@@ -178,7 +178,7 @@ class ProjectUploadService : IntentService("ProjectUploadService") {
     }
 
     private fun createUploadFinishedNotification(programName: String): Notification {
-        var uploadIntent = Intent(applicationContext, MainMenuActivity::class.java)
+        var uploadIntent = Intent(applicationContext, ProjectListActivity::class.java)
         uploadIntent.action = Intent.ACTION_MAIN
         uploadIntent = uploadIntent.setFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
         val pendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

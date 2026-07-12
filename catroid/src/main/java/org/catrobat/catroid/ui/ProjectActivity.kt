@@ -378,12 +378,6 @@ class ProjectActivity : BaseCastActivity() {
             ImportFromPocketPaintLauncher(this).startActivityForResult(SPRITE_POCKET_PAINT)
             alertDialog.dismiss()
         }
-        dialogNewActorBinding.dialogNewLookMediaLibrary.setOnClickListener {
-            ImportFormMediaLibraryLauncher(
-                this, FlavoredConstants.CATROBAT_CONTENT_LOOKS_URL
-            ).startActivityForResult(SPRITE_LIBRARY)
-            alertDialog.dismiss()
-        }
 
         dialogNewActorBinding.dialogNewLookGallery.setOnClickListener {
             ImportFromFileLauncher(
@@ -391,28 +385,11 @@ class ProjectActivity : BaseCastActivity() {
             ).startActivityForResult(SPRITE_FILE)
             alertDialog.dismiss()
         }
-        dialogNewActorBinding.dialogNewLookCamera.setOnClickListener {
-            ImportFromCameraLauncher(this).startActivityForResult(SPRITE_CAMERA)
-            alertDialog.dismiss()
-        }
         dialogNewActorBinding.dialogNewLookBackpack.setOnClickListener {
             if (BackpackListManager.getInstance().sprites.isNotEmpty()) {
                 val intent = Intent(this, BackpackActivity::class.java)
                 intent.putExtra(
                     BackpackActivity.EXTRA_FRAGMENT_POSITION, BackpackActivity.FRAGMENT_SPRITES
-                )
-                startActivity(intent)
-            } else {
-                ToastUtil.showError(this, R.string.backpack_empty)
-            }
-            alertDialog.dismiss()
-        }
-        dialogNewActorBinding.dialogNewLookFromActorsAndObjects.setOnClickListener {
-            if (ActorsAndObjectsManager.getInstance().sprites.isNotEmpty()) {
-                val intent = Intent(this, ActorAndObjectActivity::class.java)
-                intent.putExtra(
-                    ActorAndObjectActivity.EXTRA_FRAGMENT_POSITION,
-                    ActorAndObjectActivity.FRAGMENT_SPRITES
                 )
                 startActivity(intent)
             } else {

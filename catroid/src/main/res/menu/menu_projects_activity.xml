@@ -64,6 +64,11 @@
         app:showAsAction="never"
         android:icon="@drawable/ic_merge"/>
     <item
+        android:id="@+id/settings"
+        android:title="@string/settings"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_settings"/>
+    <item
         android:id="@+id/sort_projects"
         android:title="@string/sort_projects"
         app:showAsAction="never"

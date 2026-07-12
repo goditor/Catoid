@@ -30,25 +30,25 @@
     <color name="button_border_top">#3D3D3D</color>
 
     <!-- Accent Colors -->
-    <color name="accent">#03DAC5</color> <!-- Ciano vibrante moderno para destaque -->
-    <color name="brick_field_highlight">#03DAC5</color>
-    <color name="snackbar">#FF03DAC5</color>
+    <color name="accent">#7C63FF</color> <!-- Roxo neutro para destaque -->
+    <color name="brick_field_highlight">#7C63FF</color>
+    <color name="snackbar">#FF7C63FF</color>
     <color name="separator">#333333</color>
-    <color name="action_button">#FFAB08</color>
+    <color name="action_button">#7C63FF</color>
 
     <!-- Formula Editor Colors (Calculadora) -->
     <color name="formula_editor_icon">#FFF</color>
     <color name="formula_editor_text">#FFF</color>
     <color name="formula_editor_compute_button">#2A2A2A</color>
     <color name="formula_editor_compute_button_pressed">#3D3D3D</color>
-    <color name="formula_editor_delete_button">#FFAB08</color>
-    <color name="formula_editor_delete_button_pressed">#FFC953</color>
+    <color name="formula_editor_delete_button">#2A2A2A</color>
+    <color name="formula_editor_delete_button_pressed">#3D3D3D</color>
     <color name="formula_editor_toggle_functions_button">#2A2A2A</color>
     <color name="formula_editor_toggle_functions_button_pressed">#3D3D3D</color>
     <color name="formula_editor_category_button">#2A2A2A</color>
     <color name="formula_editor_category_button_pressed">#3D3D3D</color>
-    <color name="formula_editor_symbol_button">#FFAB08</color>
-    <color name="formula_editor_symbol_button_pressed">#FFC953</color>
+    <color name="formula_editor_symbol_button">#2A2A2A</color>
+    <color name="formula_editor_symbol_button_pressed">#3D3D3D</color>
     <color name="formula_editor_number_button">#1E1E1E</color>
     <color name="formula_editor_number_button_pressed">#333333</color>
 
@@ -61,7 +61,7 @@
     <color name="dark_blue">#1E1E1E</color>
 
     <!-- Misc Text Colors -->
-    <color name="formula_editor_intro_heading_color">#FFAB08</color>
+    <color name="formula_editor_intro_heading_color">#7C63FF</color>
     <color name="terms_of_use_text_color">@color/accent</color>
 
     <!-- Stage Dialog Colors -->
@@ -69,10 +69,10 @@
     <color name="stage_dialog_share_embroidery_button_background">#CC333333</color>
 
     <!-- Scratch Converter Colors -->
-    <color name="beta_label_color">#FFAB08</color>
+    <color name="beta_label_color">#7C63FF</color>
 
     <!-- Pocket Music Colors -->
-    <color name="turquoise_play_line">#FF03DAC5</color>
+    <color name="turquoise_play_line">#FF7C63FF</color>
     <color name="pocketmusic_odd_bright">#2A2A2A</color>
     <color name="pocketmusic_even_bright">#1E1E1E</color>
     <color name="pocketmusic_odd_dusk">#1E1E1E</color>

@@ -22,8 +22,10 @@
  */
 package org.catrobat.catroid.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
 import org.catrobat.catroid.BuildConfig
@@ -74,6 +76,14 @@ class ProjectListActivity : BaseCastActivity() {
         menuInflater.inflate(R.menu.menu_projects_activity, menu)
         menu.findItem(R.id.merge).isVisible = BuildConfig.FEATURE_MERGE_ENABLED
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.settings -> startActivity(Intent(this, SettingsActivity::class.java))
+            else -> return super.onOptionsItemSelected(item)
+        }
+        return true
     }
 
     override fun onBackPressed() {

@@ -549,22 +549,10 @@ open class ProjectUploadActivity : BaseActivity(),
             .setTitle(getString(R.string.rating_dialog_title))
             .setView(R.layout.dialog_rate_pocketcode)
             .setPositiveButton(R.string.rating_dialog_rate_now) { _, _ ->
-                try {
-                    startActivity(
-                        Intent(
-                            Intent.ACTION_VIEW,
-                            Uri.parse("market://details?id=$packageName")
-                        ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    )
-                } catch (e: ActivityNotFoundException) {
-                    Log.e(TAG, "onReceiveResult: ", e)
-                    startActivity(
-                        Intent(
-                            Intent.ACTION_VIEW,
-                            Uri.parse(Constants.PLAY_STORE_PAGE_LINK + packageName)
-                        )
-                    )
-                }
+                sharedPreferences
+                    .edit()
+                    .putInt(NUMBER_OF_UPLOADED_PROJECTS, 0)
+                    .apply()
             }
             .setNeutralButton(getString(R.string.rating_dialog_rate_later)) { _, _ ->
                 sharedPreferences
